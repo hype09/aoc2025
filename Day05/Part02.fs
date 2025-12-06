@@ -17,7 +17,6 @@ let solution =
         )
     |> Seq.fold (
         fun ((s, sNum), n, acc) (v, vNum) ->
-            printfn $"s:{s}, v: {v}: sNum: {sNum}, vNum: {vNum}, n: {n}, acc: {acc}"
             if s = 'L' && v = 'L' then (s, sNum), n + 1, acc
             elif s = 'L' && v = 'U' && n = 0 then (v, vNum), n, acc + (vNum - sNum) + 1L
             elif s = 'L' && v = 'U' && n > 0 then (s, sNum), n - 1, acc
