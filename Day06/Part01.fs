@@ -17,8 +17,5 @@ let problems =
 
 let solution =
     problems
-    |> Seq.mapi (fun i ps ->
-        printfn $"ps: %A{ps}, op: %A{operations[i]}"
-        Seq.reduce operations[i] ps
-    )
+    |> Seq.mapi (fun i -> Seq.reduce operations[i])
     |> Seq.fold (+) 0L
